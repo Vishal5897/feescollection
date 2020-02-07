@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="institute_demo_data5" model="institute.institute">
+            <field name="name">Gujarat Collecge</field>
+            <field name="contact">123</field>
+            <field name="address">Ahmedabad</field>
+        </record>
+        <record id="institute_demo_data4" model="institute.institute">
+            <field name="name">NavGujarat Collecge</field>
+            <field name="contact">1234578</field>
+            <field name="address">Ahmedabad</field>
+        </record>
+        <record id="institute_demo_data4" model="institute.institute">
+            <field name="name">gujarat University</field>
+            <field name="contact">5467895</field>
+            <field name="address">Ahmedabad</field>
+        </record>
+        <record id="institute_demo_data3" model="institute.institute">
+            <field name="name">Gujarat Collecge</field>
+            <field name="contact">52457845</field>
+            <field name="address">Ahmedabad</field>
+        </record>
+        <record id="institute_demo_data2" model="institute.institute">
+            <field name="name">MBA xeviers</field>
+            <field name="contact">5487458</field>
+            <field name="address">Ahmedabad navrang pura</field>
+        </record>
+        <record id="institute_demo_data1" model="institute.institute">
+            <field name="name">JG</field>
+            <field name="contact">1457823</field>
+            <field name="address">Ahmedabad</field>
+        </record>
+
+        <record id="cource_deta_static" model="course.course">
+            <field name="name">MCA</field>
+            <field name="course_fees">5000</field>
+        </record>
+        <record id="cource_deta_static1" model="course.course">
+            <field name="name">BCA</field>
+            <field name="course_fees">10000</field>
+        </record>
+        <record id="cource_deta_static2" model="course.course">
+            <field name="name">BCA</field>
+            <field name="course_fees">9000</field>
+        </record>
+        <record id="cource_deta_static3" model="course.course">
+            <field name="name">MBA</field>
+            <field name="course_fees">50000</field>
+        </record>
+        <record id="cource_deta_static4" model="course.course">
+            <field name="name">MA</field>
+            <field name="course_fees">4000</field>
+        </record>
+        <record id="cource_deta_static5" model="course.course">
+            <field name="name">CA</field>
+            <field name="course_fees">50520</field>
+        </record>
+        <!-- student data -->
+        <record id="student_deta_static_1" model="student.student">
+            <field name='student_name'>vishal</field>
+            <field name='course_name' eval="[(6,0,[ref('cource_deta_static1')])]" />
+            <field name='enrolment_no'>200</field>
+            <field name='mobile_number'>200</field>
+            <field name='address'>200</field>
+            <field name='institute_ids' eval="[(6,0,[ref('institute_demo_data2')])]" />
+        </record>
+        
+    </data>
+</odoo>

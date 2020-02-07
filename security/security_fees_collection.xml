@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record model="ir.module.category" id="my_custom_category">
+            <field name="name">My Category</field>
+            <field name="description">Helps you manage the timesheets.</field>
+            <field name="sequence">13</field>
+        </record>
+
+        <record id="simple_user" model="res.groups">
+            <field name="name">User</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+            <!-- <field name="users" eval="[(4, ref('base.user_root'))]"/> -->
+            <field name="category_id" ref="my_custom_category"/>
+        </record>
+
+        <record id="manager_user" model="res.groups">
+            <field name="name">Manager</field>
+            <field name="category_id" ref="my_custom_category"/>
+            <field name="implied_ids" eval="[(4, ref('feescollection.simple_user'))]"/>
+        </record>
+
+</odoo>

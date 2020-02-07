@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<record model="ir.ui.view" id="course_form_view">
+    <field name="name">course.course</field>
+    <field name="model">course.course</field>
+    <field name="arch" type="xml">
+        <form>
+            <sheet>
+                <group>
+                    <field name="name" />
+                    <field name='course_fees'/>
+                </group>
+            </sheet>
+        </form>
+    </field>
+</record>
+<record model='ir.ui.view' id='course_tree_view'>
+	<field name='name'>course.course</field>
+	<field name='model'>course.course</field>
+	<field name='arch' type='xml'>
+		<tree >
+			<field name='name'/>
+			<field name='course_fees'/>
+
+		</tree>
+	</field>
+</record>
+<record id="course_action_views" model="ir.actions.act_window">
+	<field name="name">Cource</field>
+	<field name="res_model">course.course</field>
+    <!-- <attribute name="groups">feescollection.group_manager</attribute> -->
+	<field name="view_mode">tree,form</field>
+</record>
+
+<menuitem id="menu_configuration_cource"  name="Configuaration" parent="main_menu" action="course_action_views"/>
+<!-- <menuitem id="object_name_menu" name="ADD COURSE" parent="menu_configuration_cource" /> -->
+<menuitem id="add_course_menu" name="Add Course" parent="menu_configuration_cource" action="course_action_views" />
+
+</odoo>

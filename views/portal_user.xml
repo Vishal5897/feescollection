@@ -1,0 +1,120 @@
+<odoo>
+    <template id="assets_frontend" name="Website Backend Assets (used in backend interface)" inherit_id="web.assets_frontend">
+        <xpath expr="//script[last()]" position="after">
+            <script type="text/javascript" src="/feescollection/static/src/js/radio_button.js" />
+            </xpath>
+    </template>
+
+    <template id="index_1">
+
+     <!--    <form method="post">
+        <input type="text" value="www"/>
+        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+        <input type="submit" class="btn btn-primary" value="Payment Now"></input>
+        </form> -->
+        
+        <t t-call="portal.portal_layout">
+            <form method="post" action="/payment/">
+            <h1></h1>
+        <h1>welcome user: <span t-esc="request.session.login"/></h1>
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                    <label for="txt_sname">Student Name</label>
+                    <input type="text" class="form-control col-sm-12" name="txt_sname" id="txt_sname" t-att-value="record.student_name" disabled="True"/>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                     <label for="txt_cname">User Course Name</label>
+                    <input type="text" class="form-control col-sm-12" name="txt_cname" id="txt_cname" t-att-value="record.course_name.name" disabled="True" />
+                </div>
+            </div>
+
+        </div>
+              <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <label for="txt_uinstitute">your Institute</label>
+                    <input type="text" class="form-control col-sm-12" name="txt_uinstitute" id="txt_uname" t-att-value="record.institute_ids.name" disabled="True"/>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                     <label for="txt_cfees">User course fees</label>
+                    <input type="text" class="form-control col-sm-12" name="txt_cfees" id="txt_cfees" t-att-value="record.course_name.course_fees" disabled="True" />
+                </div>
+            </div>
+
+        </div>
+            <center>
+            <div class="form-group col-sm-5">
+                <label for="exampleFormControlSelect1">Payment select</label>
+                <select class="form-control" id="exampleFormControlSelect1">
+                    <option>paytm</option>
+                    <option>phone-pe</option>
+                </select>
+            </div>
+        </center>
+            <center>
+                <input type="submit" class="btn btn-primary" value="Payment Now"></input>
+            </center>
+        </form>
+        </t>
+    </template>
+
+    <template id="user_register">
+        <t t-call="portal.portal_layout">
+            <t t-extend="theme_common.s_blockquote">
+
+
+            <form method="post">
+                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+                <div class="form-group">
+                    <label for="txt_uname">User Name</label>
+                    <input type="text" class="form-control" name="txt_uname" id="txt_uname" />
+                </div>
+                <div class="form-group">
+                    <input type="radio"   name="user_type" value="8" t-att-checked="checked"/> student<br/>
+                    <input type="radio" name="user_type" value="1"/> institute person<br/>
+                </div>
+                <div class="form-group d-none" id="compny_id">
+                    <label for="txt_cname">Institute</label>
+                    <input type="text" class="form-control" name="txt_company" id="txt_cname" />
+                </div>
+                <div class="form-group d-none" id="currncy_id">
+                    <label for="txt_cuname">currency</label>
+                    <select name="state_id" class="form-control state_id">
+                        <t t-foreach="rec" t-as="state">
+                            <option class="rec" t-att-value="state.id">
+                                <t t-esc="state.name"/>
+                            </option>
+                        </t>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="txt_password">password</label>
+                    <input type="password" class="form-control" name="txt_password" id="txt_fees" />
+                </div>
+                <button type="submit" class="btn btn-primary">submit</button>
+            </form>
+        </t>
+        </t>
+    </template>
+<template id="menu_item" name="first" inherit_id="portal.portal_breadcrumbs"  priority="1">
+        <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
+          <ul> 
+             <li>
+                <a href="/index/"> student </a> 
+            </li>
+          </ul>
+          <ul> 
+            <li>
+                    <a href="/my/test/">institute</a>
+            </li>
+        
+        </ul>
+        </xpath>
+</template>
+</odoo>

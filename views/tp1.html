@@ -1,0 +1,90 @@
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="dropdown-menu">
+  <form class="px-4 py-3">
+    <div class="form-group">
+      <label for="exampleDropdownFormEmail1">Email address</label>
+      <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com">
+    </div>
+    <div class="form-group">
+      <label for="exampleDropdownFormPassword1">Password</label>
+      <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password">
+    </div>
+    <div class="form-check">
+      <input type="checkbox" class="form-check-input" id="dropdownCheck">
+      <label class="form-check-label" for="dropdownCheck">
+        Remember me
+      </label>
+    </div>
+    <button type="submit" class="btn btn-primary">Sign in</button>
+  </form>
+  <div class="dropdown-divider"></div>
+  <a class="dropdown-item" href="#">New around here? Sign up</a>
+  <a class="dropdown-item" href="#">Forgot password?</a>
+</div>
+</body>
+</html>
+<template id="whatever_name_you_like" name="Your Menu" inherit_id="portal.portal_breadcrumbs"  priority="1">
+        <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
+            <li><a href="#"> my linke 1</a></li>
+            <li><a href="#"> my linke 2</a></li>
+            <li><a href="#"> my linke 3</a></li>
+            <li><a href="#"> my linke 4</a></li>
+        </xpath>
+</template>
+
+ <center>
+                    <button type="button" class="btn btn-info btn-lg col-sm-6" style="margin-top: 100px;" data-toggle="modal" data-target="#myModal">Enter Student no</button>
+                </center>
+
+  <!-- Modal -->
+                <div class="modal fade " id="myModal" role="dialog" style="margin-top: 100px;">
+                <div class="modal-dialog modal-sm">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal"></button>
+                    <center>  <h4 class="modal-title">Student Portal</h4></center>
+                    </div>
+                    <div class="modal-body">
+                      <p>Student model</p>
+                       <label for="txt_cname">student no</label>
+                    <input type="number" class="form-control" name="txt_snum" id="txt_snum" />
+                    </div>
+                    <div>
+
+                        </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                       <button type="button" class="btn btn-default" data-dismiss="modal">submit</button>
+                    </div>
+                  </div>
+                </div>
+                </div>
+            
+             <!-- <table class="table table-striped">
+                <thead class='thead-light'>
+                    <tr>
+                        <th>Student id</th>
+                    </tr>
+                </thead>
+            <tbody>
+                <t t-foreach="record" t-as="cource">
+                    <th>
+                       Student <t t-esc="cource.id" />
+                    </th>
+                    <br/>
+                </t>
+            </tbody> -->
+      
+       
+    <!-- </table> -->
+                

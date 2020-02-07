@@ -1,0 +1,11 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_institute_institute_group_user,access_institute_institute,model_institute_institute,base.group_user,1,0,0,0
+access_course_course_group_user,access_course_course,model_course_course,base.group_user,1,0,0,0
+access_student_student_group_user,access_student_student,model_student_student,base.group_user,1,0,0,0
+
+
+access_institute_institute_manager_user,access_institute_institute,model_institute_institute,feescollection.manager_user,1,1,1,1
+
+access_course_course_manager_user,access_course_course,model_course_course,feescollection.manager_user,1,1,1,1
+
+access_student_student_manager_user,access_student_student,model_student_student,feescollection.manager_user,1,1,1,1

@@ -1,0 +1,42 @@
+<h1>welcome user: <span t-esc="request.session.login"/></h1>
+            <form method="post">
+                 <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+          <div class="form-group">
+                <div class="row">
+                    <div class="col">
+                    <label for="txt_uname">Name</label>
+                    <!-- <label  t-esc="record.name" for="txt_uname">User Name</label> -->
+                    <input type="text" class="form-control col-sm-12" name="txt_uname" id="txt_uname" t-att-value="record.student_name" disabled="True"/>
+                </div>
+                <div class="col">
+                     <label for="txt_uname">User course</label>
+                     <!-- <label  t-esc="record.name" for="txt_uname">User Name</label> -->
+                    <input type="text" class="form-control col-sm-12" name="txt_uname" id="txt_uname" t-att-value="record.course_name.name" disabled="True" />
+                </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col">
+                    <label for="txt_uname">your Institute</label>
+                    <!-- <label  t-esc="record.name" for="txt_uname">User Name</label> -->
+                    <input type="text" class="form-control col-sm-12" name="txt_uname" id="txt_uname" t-att-value="record.institute_ids.name" disabled="True"/>
+                </div>
+                <div class="col">
+                     <label for="txt_uname">User course fees</label>
+                     <!-- <label  t-esc="record.name" for="txt_uname">User Name</label> -->
+                    <input type="text" class="form-control col-sm-12" name="txt_uname" id="txt_uname" t-att-value="record.course_name.course_fees" disabled="True" />
+                </div>
+                 
+                </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">Example select</label>
+                        <select class="form-control" id="exampleFormControlSelect1">
+                          <option>paytm</option>
+                          <option>phone-pe</option>
+                        </select>
+                      </div>
+                      <center><button type="submit" class="btn btn-primary">Payment Now</button></center>
+            </div>
+
+            </form>

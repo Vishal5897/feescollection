@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.ui.view" id="institute_form_view">
+        <field name="name">form</field>
+        <field name="model">institute.institute</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="contact" />
+                        <field name="address" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="institute_tree_view">
+        <field name="name">tree</field>
+        <field name="model">institute.institute</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+                <field name="contact" />
+                <field name="address" />
+            </tree>
+        </field>
+    </record>
+    <record id="institute_action_view" model="ir.actions.act_window">
+        <field name="name">Institute</field>
+        <field name="res_model">institute.institute</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem id="main_menu" name="Fees Collection" web_icon="feescollection,static/description/system2.png" />
+    <menuitem id="submenu_institute" name="Institute"  parent="main_menu" action="institute_action_view" />
+</odoo>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- graph -->
+    <record id="institute_graph_view" model="ir.ui.view">
+        <field name="name">institute.institute.graph</field>
+        <field name="model">institute.institute</field>
+        <field name="arch" type="xml">
+            <graph string="institute graph" type="pie">
+                <field name="name" />
+            </graph>
+        </field>
+    </record>
+
+    <record id="institute_dashboard_view" model="ir.ui.view">
+        <field name="name">institute.institute.dashboard</field>
+        <field name="model">institute.institute</field>
+        <field name="arch" type="xml">
+            <dashboard>
+                <view type="graph" ref="feescollection.institute_graph_view"/>
+            </dashboard>
+        </field>
+    </record>
+
+    <record id="report_action_views" model="ir.actions.act_window">
+        <field name="name">Institute Graph</field>
+        <field name="res_model">institute.institute</field>
+        <field name="view_mode">dashboard,graph</field>
+    </record>
+    <menuitem id="report_menu_view" name="Reports" parent="main_menu" action="report_action_views" />
+</odoo>

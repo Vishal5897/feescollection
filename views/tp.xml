@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="assets_frontend"  name="Website Backend Assets (used in backend interface)"  inherit_id="web.assets_frontend">
+        <xpath expr="//script[last()]" position="after">
+            
+            <script type="text/javascript" src="/feescollection/static/src/js/radio_button.js" />
+       
+            </xpath>
+</template>
+
+     <template id="index" name="Portal My Home : invoice entries" inherit_id="portal.portal_my_home" >
+         <xpath expr="//div[hasclass('o_portal_docs')]" >
+            
+             <tbody>
+                    <t t-foreach="record" t-as="cource">
+                     <th>
+                                    <t t-esc="cource.name" />
+                     </th>
+                  </t>
+                </tbody>
+       
+            <!-- <h1><span t-esc="request.session.uname"/></h1> -->
+            <!-- <h1><span t-esc="ld.login"/></h1> -->
+            <!-- <h1><span t-esc="request.session."/></h1> -->
+            <h1><span t-esc="request.session.login"/></h1>
+         </xpath>
+    </template>
+
+    <template id="user_registration" name="Portal My Home : invoice entries" inherit_id="portal.portal_my_home" >
+        <xpath expr="//div[hasclass('o_portal_docs')]" >
+           
+            <form method="post">
+                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+                <div class="form-group">
+                    <label for="txt_uname">User Name</label>
+                    <input type="text" class="form-control" name="txt_uname" id="txt_uname" />
+                </div>
+                <input type="radio"   name="user_type" value="8" t-att-checked="checked"/> User<br/>
+                <input type="radio" name="user_type" value="1"/> Manager<br/>
+                <!-- <t t-if=""> -->
+                <div class="form-group d-none" id="compny_id">
+                    <label for="txt_cname">compny</label>
+                    <input type="text" class="form-control" name="txt_company" id="txt_cname" />
+                </div>
+                <div class="form-group d-none" id="currncy_id">
+                    <label for="txt_cuname">currency</label>
+                    <select name="state_id" class="form-control state_id">
+                        <t t-foreach="rec" t-as="state">
+                            <option class="rec" t-att-value="state.id">
+                                <t t-esc="state.name"/>
+                            </option>
+                        </t>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="txt_password">password</label>
+                    <input type="password" class="form-control" name="txt_password" id="txt_fees" />
+                </div>
+                <button type="submit" class="btn btn-primary">submit</button>
+            </form>
+        </xpath>
+    </template>
+
+
+
+     <template id="portal_layout_1" name="Portal layout: project menu entry" >
+        <xpath expr="//ol[hasclass('o_portal_submenu')]" >
+            <t t-call = "portal.portal_layout">
+            <li>
+                hello
+            </li>
+            </t>
+            
+            
+        </xpath>
+    </template>
+
+   
+</odoo>
